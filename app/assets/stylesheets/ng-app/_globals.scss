@@ -1,0 +1,27 @@
+.main-view-container{
+	// Animations for the separate UI Views
+	&.ng-enter,
+	&.ng-leave{
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+
+	&.ng-enter{
+		@include transition(.2s ease-out all .2s);
+	}
+
+	&.ng-leave{
+		@include transition(.2s ease-out all);
+	}
+
+	&.ng-enter,
+	&.ng-leave.ng-leave-active{
+		@include opacity(0);
+	}
+
+	&.ng-leave,
+	&.ng-enter.ng-enter-active{
+		@include opacity(1);
+	}
+}
